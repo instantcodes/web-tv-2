@@ -1,0 +1,53 @@
+{
+  "name": "malayalam-tv-react",
+  "version": "1.0.0",
+  "description": "Secure, Modern React IPTV Application with TV Remote & Multi-platform Support",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"cyan,magenta\" \"npm run server\" \"npm run client\"",
+    "server": "tsx watch server/index.ts",
+    "client": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "start": "tsx server/index.ts"
+  },
+  "keywords": [
+    "react",
+    "iptv",
+    "hls",
+    "plyr",
+    "tv-remote",
+    "streaming"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.3.0",
+    "hls.js": "^1.7.3",
+    "lucide-react": "^1.48.0",
+    "plyr": "^3.8.4",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "autoprefixer": "^10.6.1",
+    "concurrently": "^10.0.5",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1"
+  }
+}

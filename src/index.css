@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* TV & Desktop Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ef4444;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Plyr TV & Mobile Overrides */
+:root {
+  --plyr-color-main: #ef4444;
+  --plyr-video-background: #000;
+  --plyr-control-spacing: 15px; /* Larger tap targets */
+}
+
+.plyr {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+}
+
+.plyr__video-wrapper {
+  height: 100% !important;
+  background: #000 !important;
+}
+
+.plyr video {
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.plyr__controls {
+  z-index: 45 !important;
+  padding-bottom: max(15px, env(safe-area-inset-bottom)) !important;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85)) !important;
+}
+
+/* Android TV & Keyboard Focus States */
+.tv-focusable {
+  transition: all 0.15s ease-in-out;
+}
+
+.tv-focusable:focus,
+.tv-focusable:focus-visible {
+  outline: 3px solid #ffffff !important;
+  outline-offset: -2px !important;
+  background-color: #dc2626 !important;
+  color: #ffffff !important;
+  z-index: 20 !important;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.6) !important;
+}
+
+.tv-focusable:focus * {
+  color: #ffffff !important;
+}
+
+/* Hide Plyr time controls for live TV since live streams don't have duration */
+.plyr--live .plyr__progress,
+.plyr--live .plyr__time--current,
+.plyr--live .plyr__time--duration {
+  display: none !important;
+}

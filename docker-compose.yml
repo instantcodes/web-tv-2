@@ -1,0 +1,12 @@
+services:
+  malayalam-tv:
+    build: .
+    container_name: malayalam-tv-app
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - PLAYLIST_URL=https://iptv-org.github.io/iptv/languages/mal.m3u
+      - ENABLE_STREAM_PROXY=false
+      - PLAYLIST_CACHE_TTL=3600
+    restart: unless-stopped

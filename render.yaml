@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: malayalam-tv-app
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PLAYLIST_URL
+        value: https://iptv-org.github.io/iptv/languages/mal.m3u
+      - key: ENABLE_STREAM_PROXY
+        value: "false"
+      - key: PLAYLIST_CACHE_TTL
+        value: "3600"
+      - key: INTERNAL_SECRET_KEY
+        generateValue: true
