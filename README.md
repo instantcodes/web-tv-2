@@ -69,7 +69,7 @@ cp .env.example .env
 Edit `.env` to configure your playlist URL:
 ```env
 PORT=3001
-PLAYLIST_URL=https://iptv-org.github.io/iptv/languages/mal.m3u
+PLAYLIST_URL= >>> Secret URL <<< 
 CORS_ORIGIN=http://localhost:5173
 ENABLE_STREAM_PROXY=false
 INTERNAL_SECRET_KEY=your_secret_key_here
@@ -97,7 +97,7 @@ The project is built as a **unified fullstack app** — the Express server serve
    - **Build Command**: `npm install && npm run build`
    - **Start Command**: `npm start`
 5. Under **Environment Variables**, add:
-   - `PLAYLIST_URL`: `https://iptv-org.github.io/iptv/languages/mal.m3u` (or your private M3U URL)
+   - `PLAYLIST_URL`: `    >>> Secret URL <<<   ` (or your private M3U URL)
    - `NODE_ENV`: `production`
    - `INTERNAL_SECRET_KEY`: `generate_a_random_password`
 6. Click **Deploy Web Service**. You will receive a live URL (`https://your-app.onrender.com`).
@@ -109,7 +109,7 @@ The project is built as a **unified fullstack app** — the Express server serve
 2. Click **New Project** -> **Deploy from GitHub repo**.
 3. Railway automatically detects Node.js.
 4. In Railway **Variables**, add:
-   - `PLAYLIST_URL`: `https://iptv-org.github.io/iptv/languages/mal.m3u`
+   - `PLAYLIST_URL`: `  >>> Secret URL <<<  `
    - `NODE_ENV`: `production`
 5. Railway will automatically build and deploy.
 
@@ -123,7 +123,7 @@ docker build -t malayalam-tv .
 
 # Run container on port 3001
 docker run -d -p 3001:3001 --name malayalam-tv-live \
-  -e PLAYLIST_URL="https://iptv-org.github.io/iptv/languages/mal.m3u" \
+  -e PLAYLIST_URL="  >>> Secret URL <<<  " \
   malayalam-tv
 ```
 
